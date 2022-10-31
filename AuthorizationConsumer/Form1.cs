@@ -11,7 +11,23 @@ namespace ProjectRabbitMQConsumer
         public Form1()
         {
             InitializeComponent();
+        }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены что хотите выйти?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
             var factory = new ConnectionFactory() { HostName = "localhost" };//подключаемся к локалке
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
@@ -34,21 +50,6 @@ namespace ProjectRabbitMQConsumer
                 messagePanelConsumer.Items.Add("Вы подписались на данную очередь 'dev-queue'");//вывод
             }
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Вы уверены что хотите выйти?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        
     }
 }
 

@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.messagePanelConsumer = new System.Windows.Forms.ListBox();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // messagePanel
@@ -73,17 +74,28 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(172, 370);
+            this.ExitButton.Location = new System.Drawing.Point(277, 385);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(104, 60);
+            this.ExitButton.Size = new System.Drawing.Size(117, 60);
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Location = new System.Drawing.Point(65, 385);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(117, 60);
+            this.RefreshButton.TabIndex = 3;
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(482, 489);
+            this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.messagePanelConsumer);
             this.Controls.Add(this.label2);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.ListBox messagePanelConsumer;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }
