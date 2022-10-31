@@ -31,7 +31,7 @@ namespace ProjectRabbitMQConsumer
                 channel.BasicConsume(queue: "dev-queue",
                                      autoAck: true,
                                      consumer: consumer);
-                messagePanelConsumer.Items.Add("Вы подписались на данную очередь 'dev-queue'");
+                messagePanelConsumer.Items.Add("Вы подписались на данную очередь 'dev-queue'");//вывод
             }
         }
 
