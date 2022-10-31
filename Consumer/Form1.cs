@@ -12,7 +12,7 @@ namespace ProjectRabbitMQConsumer
         {
             InitializeComponent();
 
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "localhost" };//подключаемся к локалке
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -21,7 +21,7 @@ namespace ProjectRabbitMQConsumer
                     exclusive: false,
                     autoDelete: false,
                     arguments: null);
-                var consumer = new EventingBasicConsumer(channel);
+                var consumer = new EventingBasicConsumer(channel);//подписываемся на очередь
                 consumer.Received += (sender, e) =>
                 {
                     var body = e.Body;
