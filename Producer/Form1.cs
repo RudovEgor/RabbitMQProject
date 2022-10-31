@@ -31,16 +31,16 @@ namespace ProjectRabbitMQ
             
                 int timeToSleep = new Random().Next(1000, 3000);//от 1 до 3 секунд
                 Thread.Sleep(timeToSleep);
-                var factory = new ConnectionFactory() { HostName = "localhost" };
+                var factory = new ConnectionFactory() { HostName = "localhost" };//подключаемся к локалке
                 using (var connection = factory.CreateConnection())
                 using (var channel = connection.CreateModel())
                 {
-                    channel.QueueDeclare(queue: "dev-queue",
+                    channel.QueueDeclare(queue: "dev-queue",// создаем очередь(queue)
                         durable: false,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
-                    string message = messageBox.Text;
+                    string message = messageBox.Text;//создаем сообщение и настраеваем его
                      var body = Encoding.UTF8.GetBytes(message);
                     channel.BasicPublish(exchange: "",
                         routingKey: "dev-queue",
